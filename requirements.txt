@@ -1,0 +1,5 @@
+numpy==1.23.1
+IPython==7.24.0
+pandas==1.2.4
+ast
+pigeonXT

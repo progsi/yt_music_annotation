@@ -1,1 +1,1 @@
-# yt_music_annotation
+# Annotate pairs of videos regarding their music similarity.

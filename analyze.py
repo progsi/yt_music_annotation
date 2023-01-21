@@ -1,3 +1,4 @@
+import numpy as np
 import seaborn as sns
 import pandas as pd
 import os
@@ -19,7 +20,8 @@ def pivot_annotations():
 def get_agreement_dataset():
     data = pivot_annotations()
     data.columns = ['A_yt_id', 'B_yt_id', 'label', 'label2', 'agreement']
-    return data.loc[data.agreement, ['A_yt_id', 'B_yt_id', 'label']]
+    data['label'] = data.apply(lambda x: x.label if x.agreement else 'no_agreement', axis=1)
+    return data[['A_yt_id', 'B_yt_id', 'label']]
 
 
 def label_distribution_plot(data: pd.DataFrame, agreed=False):
